@@ -8,11 +8,7 @@ export default function DartIcon(): ReactElement {
       strokeLinejoin="round"
       strokeWidth="2"
       xmlns="http://www.w3.org/2000/svg"
-      className="block w-6 h-6"
-      style={{
-        width: 16,
-        height: 16,
-      }}
+      className="w-4 h-4"
     >
       <g fill="currentColor">
         <path d="M86.6 25l3 .1c1.1.1 2.2.3 3.4.5l-2.5-7.4L75.7 3.5c-3.4-3.4-8-4.4-10.4-2.3L29.2 25.1l57.4-.1zm6.1 3.6c-1.2-.2-2.3-.4-3.3-.5l-2.9-.1-56 .1 78.6 78.6 6.1-13.8-22.5-64.3zM28.9 92.2l64.3 22.7 13.8-6.1-78.6-78.6v56.1l.1 2.7c0 .9.1 2 .4 3.2z"></path>

@@ -1,15 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
+import projectsSlice from 'features/projects/projects-slice';
+import tagsSlice from 'features/tags/tags-slice';
 
-// Import the previously created search slice
 import searchSlice from '../features/search/search-slice';
 
-// Create the store, adding the search slice to it
 export const store = configureStore({
   reducer: {
     search: searchSlice,
+    tags: tagsSlice,
+    projects: projectsSlice,
   },
 });
 
-// Export some helper types used to improve type-checking
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;

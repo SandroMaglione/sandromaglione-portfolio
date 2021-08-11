@@ -6,10 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tsc": "tsc -p tsconfig.json",
+    "check": "npm run tsc && npm run lint"
   },
   "dependencies": {
     "@notionhq/client": "^0.2.4",
+    "@practical-fp/union-types": "^1.5.1",
     "@reduxjs/toolkit": "^1.6.1",
     "axios": "^0.21.1",
     "fp-ts": "^2.11.1",
@@ -22,6 +25,7 @@
     "timeago.js": "^4.0.2"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.3.3",
     "@types/react": "17.0.16",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
     "@typescript-eslint/parser": "^4.29.1",

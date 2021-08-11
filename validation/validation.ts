@@ -40,7 +40,7 @@ const notionPropertyMultiSelect = t.type({
   ),
 });
 
-const notionProperty = t.type({
+export const notionProperty = t.type({
   link: notionPropertyUrl,
   date: notionPropertyDate,
   technology: notionPropertyMultiSelect,

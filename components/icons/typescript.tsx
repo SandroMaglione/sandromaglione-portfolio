@@ -8,11 +8,7 @@ export default function TypescriptIcon(): ReactElement {
       strokeLinejoin="round"
       strokeWidth="2"
       xmlns="http://www.w3.org/2000/svg"
-      className="block w-6 h-6"
-      style={{
-        width: 16,
-        height: 16,
-      }}
+      className="w-4 h-4"
     >
       <path
         fill="currentColor"
