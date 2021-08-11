@@ -1,13 +1,22 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from 'next';
 
-type Data = {
-  name: string
-}
+import { Client } from '@notionhq/client';
 
-export default function handler(
+const notion = new Client({ auth: process.env.NOTION_KEY });
+const databaseId = process.env.NOTION_DATABASE_ID;
+
+export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
-  res.status(200).json({ name: 'John Doe' })
+  res: NextApiResponse
+): Promise<void> {
+  const response = await notion.databases.query({
+    database_id: databaseId as string,
+    sorts: [
+      {
+        property: 'date',
+        direction: 'descending',
+      },
+    ],
+  });
+  res.status(200).json({ response });
 }
