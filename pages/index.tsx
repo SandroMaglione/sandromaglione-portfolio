@@ -44,7 +44,7 @@ export default function Home({ notionDatabase }: PageProps): ReactElement {
   );
 }
 
-const SOURCE_URL = 'http://localhost:3000/api/hello';
+const SOURCE_URL = `${process.env.NEXT_PUBLIC_BASE_URL}/api/hello`;
 export async function getServerSideProps(): Promise<
   GetServerSidePropsResult<PageProps>
 > {
