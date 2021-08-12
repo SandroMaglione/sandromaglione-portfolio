@@ -16,6 +16,39 @@ export default function Home({ notionDatabase }: PageProps): ReactElement {
   return (
     <>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet="utf-8" />
+        <meta
+          name="description"
+          content="Sandro Maglione is a Computer Engineer, Mobile, Web, and Full-Stack Developer. Here you can view all the projects he developed during is career. Web development, mobile development, backend development, open-source, and more."
+        />
+        <meta
+          property="og:title"
+          content="Portfolio And Projects - Sandro Maglione"
+          key="ogtitle"
+        />
+        <meta
+          property="og:description"
+          content="Sandro Maglione is a Computer Engineer, Mobile, Web, and Full-Stack Developer. Here you can view all the projects he developed during is career. Web development, mobile development, backend development, open-source, and more."
+          key="ogdesc"
+        />
+        <meta
+          property="og:url"
+          content="https://portfolio.sandromaglione.com/"
+          key="ogurl"
+        />
+        <meta
+          property="og:image"
+          content="https://www.sandromaglione.com/aboutme/static/media/profile3.d01ad877.png"
+          key="ogimage"
+        />
+        <meta
+          property="og:site_name"
+          content="Sandro Maglione Portfolio And Projects"
+          key="ogsitename"
+        />
+        <meta name="twitter:card" content="summary" key="twcard" />
+        <meta name="twitter:creator" content="SandroMaglione" key="twhandle" />
         <title>
           Portfolio And Projects - Sandro Maglione | Computer Engineer
         </title>
