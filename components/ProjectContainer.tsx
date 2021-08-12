@@ -9,8 +9,10 @@ import { toggleTag } from 'features/tags/tags-slice';
 import { isTagSelected } from 'computations/filters';
 
 export default function ProjectContainer({
+  index,
   notionProperty,
 }: {
+  index: number;
   notionProperty: NotionProperty;
 }): ReactElement {
   const tagList = useAppSelector((state) => state.tags.tagList);
@@ -18,14 +20,17 @@ export default function ProjectContainer({
   return (
     <div
       key={notionProperty.title.id}
-      className="px-10 py-10 border-b border-[#0366d6] border-opacity-50"
+      className="px-6 py-8 sm:px-10 sm:py-10 border-b border-[#0366d6] border-opacity-50 stagger"
+      style={{
+        animationDelay: `${index * 0.15}s`,
+      }}
     >
-      <div className="flex flex-wrap gap-2 text-sm font-light text-[#586069]">
+      <div className="flex flex-wrap gap-2 break-words text-sm font-light text-[#586069]">
         <a
           href={notionProperty['link-repository'].url}
           target="_blank"
           rel="noreferrer"
-          className="text-indigo-500 hover:text-indigo-600 hover:underline"
+          className="text-indigo-500 break-words hover:text-indigo-600 hover:underline"
         >
           {notionProperty.repository.rich_text[0].plain_text}
         </a>
@@ -34,7 +39,7 @@ export default function ProjectContainer({
           notionProperty.date.date.start
         )}`}</span>
       </div>
-      <h2 className="mt-1.5 text-4xl font-bold tracking-wider text-[#0366d6]">
+      <h2 className="mt-1.5 break-words text-3xl sm:text-4xl font-bold tracking-wider text-[#0366d6]">
         <a
           href={notionProperty.link.url}
           target="_blank"

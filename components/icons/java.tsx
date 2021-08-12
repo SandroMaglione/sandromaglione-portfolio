@@ -3,7 +3,7 @@ import { ReactElement } from 'react';
 export default function JavaIcon(): ReactElement {
   return (
     <svg
-      viewBox="0 0 256 263"
+      viewBox="0 0 128 128"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="2"

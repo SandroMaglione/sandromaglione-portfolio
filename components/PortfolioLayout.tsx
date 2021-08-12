@@ -1,6 +1,6 @@
 import { NotionDatabase } from 'app-types';
 import { ReactElement, useEffect } from 'react';
-import { map } from 'fp-ts/lib/Array';
+import { mapWithIndex } from 'fp-ts/lib/Array';
 import ProjectContainer from '@components/ProjectContainer';
 import SearchContainer from '@components/SearchContainer';
 import TagsContainer from '@components/TagsContainer';
@@ -11,6 +11,7 @@ import {
   initProjectList,
   selectFilteredProjectList,
 } from 'features/projects/projects-slice';
+import ContactByEmail from './ContactByEmail';
 
 export default function PortfolioLayout({
   notionDatabase,
@@ -25,6 +26,7 @@ export default function PortfolioLayout({
   }, [notionDatabase, dispatch]);
   return (
     <div>
+      <ContactByEmail />
       <div className="mx-4">
         <div>
           <SearchContainer />
@@ -36,9 +38,10 @@ export default function PortfolioLayout({
       <div className="mt-8">
         {pipe(
           projectList,
-          map((properties) => (
+          mapWithIndex((index, properties) => (
             <ProjectContainer
               key={properties.title.title[0].plain_text}
+              index={index}
               notionProperty={properties}
             />
           ))

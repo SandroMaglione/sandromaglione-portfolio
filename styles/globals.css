@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  .stagger {
+    opacity: 0;
+    animation-name: stagger;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+  }
+
+  @keyframes stagger {
+    0% {
+      opacity: 0;
+      transform: translateY(60%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+
+  .hover-sm {
+    @apply transform transition-transform hover:translate-y-[-2px];
+  }
+}
