@@ -23,6 +23,8 @@ export default function ProjectContainer({
       <div className="flex flex-wrap gap-2 text-sm font-light text-[#586069]">
         <a
           href={notionProperty['link-repository'].url}
+          target="_blank"
+          rel="noreferrer"
           className="text-indigo-500 hover:text-indigo-600 hover:underline"
         >
           {notionProperty.repository.rich_text[0].plain_text}
@@ -33,10 +35,28 @@ export default function ProjectContainer({
         )}`}</span>
       </div>
       <h2 className="mt-1.5 text-4xl font-bold tracking-wider text-[#0366d6]">
-        <a href={notionProperty.link.url} className="hover:underline">
+        <a
+          href={notionProperty.link.url}
+          target="_blank"
+          rel="noreferrer"
+          className="hover:underline"
+        >
           {notionProperty.title.title[0].plain_text}
         </a>
       </h2>
+      <div className="flex gap-1.5 mt-3 flex-wrap">
+        {pipe(
+          notionProperty.category.multi_select,
+          map(({ id, name }) => (
+            <span
+              key={id}
+              className="font-medium opacity-40 rounded-2xl hover:opacity-75 text-xs text-[#586069] border border-[#8c95a0] px-3 py-0.5"
+            >
+              {name}
+            </span>
+          ))
+        )}
+      </div>
       <p className="mt-3 text-lg font-light tracking-tight text-[#586069]">
         {notionProperty.description.rich_text[0].plain_text}
       </p>

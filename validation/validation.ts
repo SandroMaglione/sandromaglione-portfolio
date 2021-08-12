@@ -44,6 +44,7 @@ export const notionProperty = t.type({
   link: notionPropertyUrl,
   date: notionPropertyDate,
   technology: notionPropertyMultiSelect,
+  category: notionPropertyMultiSelect,
   tags: notionPropertyMultiSelect,
   'link-repository': notionPropertyUrl,
   repository: notionPropertyText,
